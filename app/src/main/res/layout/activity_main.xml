@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="0dp"
         android:layout_height="380dp"
         android:layout_marginTop="88dp"
@@ -17,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlayAgain"
         app:rowCount="3">
 
         <ImageView
@@ -25,7 +26,8 @@
             android:layout_width="115dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
-            android:onClick="click" />
+            android:onClick="click"
+            android:tag="0" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -33,7 +35,8 @@
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginLeft="11dp"
-            android:onClick="click" />
+            android:onClick="click"
+            android:tag="1" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -41,7 +44,8 @@
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginLeft="13dp"
-            android:onClick="click" />
+            android:onClick="click"
+            android:tag="2" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -49,7 +53,8 @@
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
-            android:onClick="click"/>
+            android:onClick="click"
+            android:tag="3" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -58,7 +63,8 @@
             android:layout_margin="10dp"
             android:layout_marginLeft="11dp"
             android:layout_marginTop="20dp"
-            android:onClick="click"/>
+            android:onClick="click"
+            android:tag="4" />
 
         <ImageView
             android:id="@+id/imageView6"
@@ -67,7 +73,8 @@
             android:layout_margin="10dp"
             android:layout_marginLeft="13dp"
             android:layout_marginTop="20dp"
-            android:onClick="click"/>
+            android:onClick="click"
+            android:tag="5" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -75,7 +82,8 @@
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
-            android:onClick="click"/>
+            android:onClick="click"
+            android:tag="6" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -84,7 +92,8 @@
             android:layout_margin="10dp"
             android:layout_marginLeft="11dp"
             android:layout_marginTop="20dp"
-            android:onClick="click"/>
+            android:onClick="click"
+            android:tag="7" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -93,32 +102,37 @@
             android:layout_margin="10dp"
             android:layout_marginLeft="13dp"
             android:layout_marginTop="20dp"
-            android:onClick="click"/>
+            android:onClick="click"
+            android:tag="8" />
 
 
     </androidx.gridlayout.widget.GridLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/winnerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="175dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="175dp"
         android:text="TextView"
+        android:textSize="24sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonPlayAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="159dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="159dp"
+        android:onClick="playAgain"
         android:text="Play Again"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/winnerTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
