@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
+import androidx.gridlayout.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         TextView winnerTextView = findViewById(R.id.winnerTextView);
         buttonPlayAgain.setVisibility(View.INVISIBLE);
         winnerTextView.setVisibility(View.INVISIBLE);
-        GridLayout gridLayout = findViewById(R.id.gridLayout);
+        GridLayout gridLayout = (GridLayout) findViewById(R.id.gridLayout);
         for(int i = 0; i < gridLayout.getChildCount(); i++) {
             ImageView counter = (ImageView) gridLayout.getChildAt(i);
             counter.setImageDrawable(null);
