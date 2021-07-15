@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
             counter.animate().translationYBy(1500).rotation(3600).setDuration(300);
         }
 
+        Button buttonPlayAgain = findViewById(R.id.buttonPlayAgain);
+        TextView winnerTextView = findViewById(R.id.winnerTextView);
+        
         for(int[] winningPosition: winningPositions) {
             if(gameStatus[winningPosition[0]] == gameStatus[winningPosition[1]] && gameStatus[winningPosition[1]] == gameStatus[winningPosition[2]]
                     && gameStatus[winningPosition[0]] != 2) {
@@ -47,14 +50,23 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     message = "O";
                 }
-
-                Button buttonPlayAgain = findViewById(R.id.buttonPlayAgain);
-                TextView winnerTextView = findViewById(R.id.winnerTextView);
+    
                 winnerTextView.setText(message + " has won!");
                 buttonPlayAgain.setVisibility(View.VISIBLE);
                 winnerTextView.setVisibility(View.VISIBLE);
 
             }
+        }
+        
+        int full = 0;
+        for(int i = 0; i < gameStatus.length; i++) {
+            if(gameStatus[i] != 2) full++;
+        }
+        
+        if(full == 9) {
+            winnerTextView.setText("Draw game!");
+            buttonPlayAgain.setVisibility(View.VISIBLE);
+            winnerTextView.setVisibility(View.VISIBLE);
         }
     }
 
